@@ -44,7 +44,7 @@ python scanner.py <host> <start_port> <end_port>
 Example:
 
 ```bash
-python scanner.py 127.0.0.1 1 9000
+python tool_x.py 192.168.0.12 1 9000
 ```
 
 ### 2. Reconnaissance Module
