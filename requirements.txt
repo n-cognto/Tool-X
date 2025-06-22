@@ -1,0 +1,17 @@
+# Core dependencies
+requests>=2.25.1
+beautifulsoup4>=4.9.3
+colorama>=0.4.4
+python-nmap>=0.6.1
+python-whois>=0.7.3
+dnspython>=2.1.0
+
+# Additional dependencies for specific modules
+urllib3>=1.26.5
+lxml>=4.6.3
+
+# Optional dependencies (install manually if needed)
+# Note: Some system tools are required:
+# - nmap (system package)
+# - searchsploit/exploitdb (system package)
+# - nmcli/NetworkManager (system package)
