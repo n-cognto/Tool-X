@@ -24,13 +24,9 @@ RUN apt-get update && apt-get install -y \
     && apt-get clean \
     && rm -rf /var/lib/apt/lists/*
 
-# Install exploitdb from GitHub since it's not in default repos
-RUN git clone https://github.com/offensive-security/exploitdb.git /opt/exploitdb && \
-    ln -sf /opt/exploitdb/searchsploit /usr/local/bin/searchsploit && \
-    chmod +x /opt/exploitdb/searchsploit
-
-# Update searchsploit database
-RUN /opt/exploitdb/searchsploit -u || true
+# Create a mock searchsploit command for compatibility
+RUN echo '#!/bin/bash\necho "searchsploit functionality not available in container"' > /usr/local/bin/searchsploit && \
+    chmod +x /usr/local/bin/searchsploit
 
 # Copy requirements file
 COPY requirements.txt .
